@@ -5,23 +5,23 @@ NewTone.h // IRremote uses the same timer as the default Tone.h library
           // so we use this to not get errors when using the buzzer and infrared remote.
 
 ### Needed materials
-Two 9V batteries
-9V battery adapters for Arduino/wire connections
-Arduino UNO
-Wires Male-to-male/ female-to-female and normal 22-AWG wires
-HC-SR04 Ultrasonic Sensor(optional)
-Any infrared remote and a receiver sensor
-A buzzer for sound(optional)
-Four 3-12V gear motors
-L298N motor driver(Do yourself a favour and buy something else, this motor driver is very power hungry and inneficient.
+* Two 9V batteries
+* 9V battery adapters for Arduino/wire connections
+* Arduino UNO
+* Wires Male-to-male/ female-to-female and normal 22-AWG wires
+* HC-SR04 Ultrasonic Sensor(optional)
+* Any infrared remote and a receiver sensor
+* A buzzer for sound(optional)
+* Four 3-12V gear motors
+* L298N motor driver(Do yourself a favour and buy something else, this motor driver is very power hungry and inneficient.
 You could get something like this at a very cheap price on aliexpress:https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-1a.html)
 
 !!! 
 For people that don't have a car chassis like me:
-Electrical tape
-Wire cutters
-Wire strippers
--Take a shoe box or icecream container(even better) and measure the distance
+* Electrical tape
+* Wire cutters
+* Wire strippers
+* Take a shoe box or icecream container(even better) and measure the distance
 on the motor between the two screws then mark that on the box.
 Make holes with a thin screwdriver.
 Then you can assemble the car like in the photos below.
