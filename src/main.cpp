@@ -168,16 +168,15 @@ void brake()
 
 void detectDistance()
 {
-  delay(50);
-  Serial.println(distanceSensor.ping_cm(MAX_DISTANCE));
-    if(distanceSensor.ping_cm())
-    {
-      NewTone(BUZZER, 600);
-    }
-    else
-    {
-      noNewTone(BUZZER);
-    }
+  if(distanceSensor.ping_cm())
+  {
+    brake();
+    NewTone(BUZZER, 600);
+  }
+  else
+  {
+    noNewTone(BUZZER);
+  }
 }
 
 void loop() 
