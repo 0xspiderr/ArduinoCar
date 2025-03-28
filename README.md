@@ -29,6 +29,10 @@ Just be careful to secure the motors with electrical tape/wires,
 otherwise the car will not go straight.
 !!!
 
+## Beware
+For the car to fully work you should connect the motor shield to 4 AA batteries using
+a battery holder(which I didn't have), otherwise the car works fine without the ultrasonic sensor connected.
+
 ### Schematics
 
 ![Schematic](https://github.com/user-attachments/assets/2e82772b-8ebd-411c-8295-17016e4c1233)
