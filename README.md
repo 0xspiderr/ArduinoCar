@@ -1,7 +1,7 @@
 ### Libraries used
-IRRemote.h
-NewPing.h // for ultrasonic sensor
-NewTone.h // IRremote uses the same timer as the default Tone.h library
+* IRRemote.h
+* NewPing.h // for ultrasonic sensor
+* NewTone.h // IRremote uses the same timer as the default Tone.h library
           // so we use this to not get errors when using the buzzer and infrared remote.
 
 ### Needed materials
