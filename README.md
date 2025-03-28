@@ -15,6 +15,8 @@ NewTone.h // IRremote uses the same timer as the default Tone.h library
 * Four 3-12V gear motors
 * L298N motor driver(Do yourself a favour and buy something else, this motor driver is very power hungry and inneficient.
 You could get something like this at a very cheap price on aliexpress:https://www.sparkfun.com/sparkfun-motor-driver-dual-tb6612fng-1a.html)
+* Soldering iron(optional) - I soldered the ultrasonic sensor pins, IR sensor pins and the gear motors pins with wires for better stability.
+If you don't have a soldering iron that is fine and you can wrap the wires around the connector pins.
 
 !!! 
 For people that don't have a car chassis like me:
