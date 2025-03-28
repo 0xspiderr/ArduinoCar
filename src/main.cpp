@@ -1,5 +1,8 @@
 #include <Arduino.h>
 #include <IRremote.h>
+#include <NewPing.h>
+#include <NewTone.h> // Added because IRRemote was conflicting with the Tone.h library
+                     // because they use the same timers.
 
 // BAUD RATE
 #define BAUD_RATE 9600
@@ -16,7 +19,6 @@ IRRawDataType receivedData;
 #define IR_BRAKE_CODE 0xE916FF00          // button ch+ on remote
 #define IR_SPEED_INC_CODE 0xEA15FF00      // button '+' on remote
 #define IR_SPEED_DEC_CODE 0xf807FF00      // button '-' on remote
-#define IR_RESET_SIGNAL 0x0
 
 // MOTOR A PINS
 #define ENA  10
@@ -26,6 +28,15 @@ IRRawDataType receivedData;
 #define ENB 5
 #define IN3B 6
 #define IN4B 7
+
+// BUZZER PIN
+#define BUZZER 13
+
+// DISTANCE SENSOR PINS
+#define ECHO 4
+#define TRIG 2
+#define MAX_DISTANCE 20
+NewPing distanceSensor(TRIG,ECHO,MAX_DISTANCE);
 
 #define MAX_SPEED 255
 
@@ -47,11 +58,17 @@ void setup()
   pinMode(IN3B, OUTPUT);
   pinMode(IN4B, OUTPUT);
 
+  // Set miscellaneous pins
+  pinMode(BUZZER, OUTPUT);
+
   // Turn off motors
   digitalWrite(IN1A, LOW);
   digitalWrite(IN2A, LOW);
   digitalWrite(IN3B, LOW);
   digitalWrite(IN4B, LOW);
+
+  // Miscellaneous pins set to low
+  digitalWrite(BUZZER, LOW);
 }
 
 void driveForward()
@@ -149,6 +166,20 @@ void brake()
   digitalWrite(IN4B, LOW);
 }
 
+void detectDistance()
+{
+  delay(50);
+  Serial.println(distanceSensor.ping_cm(MAX_DISTANCE));
+    if(distanceSensor.ping_cm())
+    {
+      NewTone(BUZZER, 600);
+    }
+    else
+    {
+      noNewTone(BUZZER);
+    }
+}
+
 void loop() 
 {
   if(IrReceiver.decode())
@@ -192,4 +223,5 @@ void loop()
     }
     IrReceiver.resume();
   }
+  detectDistance();
 }
