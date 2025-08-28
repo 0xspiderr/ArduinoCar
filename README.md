@@ -41,6 +41,3 @@ a battery holder(which I didn't have), otherwise the car works fine without the 
 
 ![IMG-20250328-WA0001 1](https://github.com/user-attachments/assets/1845dbbe-92a2-4917-a9ee-a5a028be7bf7)
 
-https://github.com/user-attachments/assets/9518d48b-33e9-4931-b15b-d2a90e6b1555
-
-https://github.com/user-attachments/assets/cb45fef7-72d3-43ca-8cbf-7b301f450b34
